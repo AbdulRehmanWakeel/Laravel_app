@@ -57,10 +57,11 @@ Route::get('courses',[CourseController::class,'queries']);
 // Route::patch('entity',[EntityController::class,'patch']);
 // Route::delete('entity',[EntityController::class,'delete']);
 
-Route::any('entity',[EntityController::class,'any']);
+// Route::any('entity',[EntityController::class,'any']);
 
-Route::match(['get','post'],'entity',[EntityController::class,'match1']);
+// Route::match(['get','post'],'entity',[EntityController::class,'match1']);
 
-Route::match(['put','delete'],'entity',[EntityController::class,'match2']);
+// Route::match(['put','delete'],'entity',[EntityController::class,'match2']);
 
+Route::post('login',[EntityController::class,'login']);
 Route::view('form','entity');

@@ -1,9 +1,10 @@
 <div>
-    <h1>Entity Form</h1>
+    <h1>Login Form</h1>
 
-     
-    <form action="/entity" method="post">
-        <input type="hidden" name="_method" value="PATCH">
+    <form action="/login" method="post">
+
+    {{-- <form action="/entity" method="post"> --}}
+        {{-- <input type="hidden" name="_method" value="PATCH"> --}}
         @csrf
 
         <input type="text" name="entity" placeholder="Enter name">
@@ -12,7 +13,7 @@
         <input type="password" name="password" placeholder="Enter password">
         <br/><br/>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Login</button>
     </form>
 
 
