@@ -7,6 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EntityController;
 
 
 Route::get('/', function () {
@@ -48,3 +49,18 @@ Route::get('employees',[EmployeeController::class,'getEmployee']);
 Route::get('office',[OfficeController::class,'getOffice']);
 
 Route::get('courses',[CourseController::class,'queries']);
+
+
+// Route::get('entity',[EntityController::class,'get']);
+// Route::post('entity',[EntityController::class,'post']);
+// Route::put('entity',[EntityController::class,'put']);
+// Route::patch('entity',[EntityController::class,'patch']);
+// Route::delete('entity',[EntityController::class,'delete']);
+
+Route::any('entity',[EntityController::class,'any']);
+
+Route::match(['get','post'],'entity',[EntityController::class,'match1']);
+
+Route::match(['put','delete'],'entity',[EntityController::class,'match2']);
+
+Route::view('form','entity');
