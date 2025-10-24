@@ -5,6 +5,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\ageCheck;
 use App\Http\Middleware\CountryCheck;
+use App\Http\Middleware\SetLang;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -17,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
             ageCheck::class,
             CountryCheck::class,
         ]);
+        $middleware->appendToGroup('SetLang', SetLang::class);
 
     })
     ->withExceptions(function (Exceptions $exceptions): void {
